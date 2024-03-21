@@ -1,15 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { Home } from './pages/Home';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 function App() {
-
   return (
-    <h1 className="text-red-500">
-      Hello world!
-    </h1>
-  )
+    <React.Fragment>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+        </Routes>
+      </Router>
+    </React.Fragment>
+   
+  );
 }
-    
 
+export default App;
 
-
-export default App
