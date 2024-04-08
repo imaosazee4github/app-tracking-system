@@ -36,7 +36,7 @@ const ApplicantSchema = new mongoose.Schema(
   activeJobsStage: [{
    job: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'job'
+    ref: 'jobs'
    },
    stage: {
     type: String,

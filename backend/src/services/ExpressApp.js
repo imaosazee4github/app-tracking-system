@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import ApplicantRoute from "../routes/ApplicantRoute.js"
+import AdminRoute from "../routes/AdminRoute.js"
 
 
 
@@ -16,6 +17,7 @@ const createExpressApp = () => {
 
  // Define your routes and middleware here
  app.use("/applicant", ApplicantRoute )
+ app.use("/admin", AdminRoute)
 
  return app;
 };

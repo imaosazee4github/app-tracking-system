@@ -22,6 +22,10 @@ const JobSchema = new mongoose.Schema(
    type:'Number',
    required: true
   },
+  pay: {
+    type: 'Number',
+    required: true
+},
   jobId:{
    type:'String',
    required: true
