@@ -1,6 +1,10 @@
 import express from "express"
 import Jobs from "../models/JobPostModel.js"
 import Applicant from "../models/ApplicantModel.js"
+import Admin from "../models/AdminModel.js"
+import { GenerateSignature, ValidatePassword } from "../../utility/PasswordUtility.js"
+import bcrypt from "bcrypt"
+import multer from "multer";
 
 
 export const CreateJob = async (req, res) => {
@@ -21,7 +25,7 @@ export const CreateJob = async (req, res) => {
   company: company,
   title: title,
   location: location,
-  minExperience : minExperience,
+  minExperience: minExperience,
   pay: pay,
   jobId: jobId,
   applicants: []
@@ -30,10 +34,10 @@ export const CreateJob = async (req, res) => {
  return res.status(200).json(CreateJob)
 }
 
-export const GetAllJobs = async (req, res) =>{
+export const GetAllJobs = async (req, res) => {
  const jobs = await Jobs.find()
 
- if(jobs !== null){
+ if (jobs !== null) {
   return res.status(200).json(jobs)
  }
 
@@ -42,17 +46,17 @@ export const GetAllJobs = async (req, res) =>{
 
 // FIND ONE JOB
 
-export const GetOneJob = async (req, res) =>{
+export const GetOneJob = async (req, res) => {
  const jobId = req.params.id;
 
  const job = await Jobs.findById(jobId)
 
- if(job !== null){
+ if (job !== null) {
   return res.status(200).json(job)
  }
 
- return res.json({ message: "Job data npt available"})
-} 
+ return res.json({ message: "Job data npt available" })
+}
 
 // FIND ALL APPLICANTS ON A JOB
 export const JobApplicants = async (req, res) => {
@@ -119,22 +123,69 @@ export const UpdateApplicationStatus = async (req, res) => {
 };
 
 
- // const isApplicantInJob = job.applicants.some(applicantId => applicantId.equals(AppId));
+// Create Admin
+export const AdminSignUp = async (req, res) => {
 
- // if (isApplicantInJob) {
- //  // Applicant is associated with the job
- //  // Proceed with your logic here
-  
- // } else {
- //  // Applicant is not associated with the job
- //  return res.status(404).json({ message: "Applicant is not associated with the job" });
- // }
+ try {
+  const {
+   firstname,
+   lastname,
+   email,
+   password
+  } = req.body;
 
- // const JobApplicant = job.applicants.map(applicant => ({
- //  firstname: applicant.firstname,
- //  lastname: applicant.lastname,
- //  email: applicant.email,
- //  yearsofExperience: applicant.yearsofExperience,
- //  age: applicant.age,
- //  number: applicant.number
- // }));
+  // check if email already exists in DB
+  const existingAdmin = await Admin.findOne({ email: email });
+
+  if (existingAdmin) {
+   return res.status(403).json({ msg: "Admin already exists", existingAdmin })
+  } else {
+
+   const salt = await bcrypt.genSalt()
+   const passwordHash = await bcrypt.hash(password, salt)
+
+   const newAdmin = await Admin.create({
+    firstname,
+    lastname,
+    email,
+    password: passwordHash,
+    salt: salt
+   })
+
+   res.status(201).json(newAdmin)
+  }
+
+ } catch (error) {
+  res.status(500).json({ error: error.message })
+ }
+}
+
+
+// LOGIN
+export const AdminLogin = async (req, res) => {
+ const { email, password } = req.body;
+
+ const admin = await Admin.findOne({ email: email });
+
+ if (admin !== null) {
+  const validation = await ValidatePassword(password,
+   admin.password,
+   admin.salt);
+
+  if (validation) {
+   // Generate the signature
+   const signature = GenerateSignature({
+    _id: admin._id,
+    email: admin.email,
+   });
+   // send result to client
+   return res.status(201).json({
+    signature: signature,
+    verified: admin.verified,
+    email: admin.email
+   });
+  }
+ }
+
+ return res.status(404).json({ message: "Login Error" });
+}
