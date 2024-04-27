@@ -33,17 +33,18 @@ const data =[
     {
         "id": 1,
         "role": "Frontend Developer",
-        "company": "xyz engineering",
+        "company": "Microsoft",
        "iconcomp": "MdLocationCity",
         "location": "Lagos",
         "iconLoction": "IoLocationOutline",
-        "salary": "#100,000",
-        "type": "on-site",      
+        "salary": "#240,000",
+        "type": "onsite",      
         "iconPeople": "FaPeopleGroup",
         "numberofApplicants": "20 applicants",
         "openDate": "Posted on 4th, March 2024",
         "closeDate": "Closed on 4th, March 2024",
-        "button": "Apply"
+        "button": "Apply",
+        "job_descriptions": "A DevOps engineer is responsible for the smooth operation of a company's IT infrastructure. They work with developers to deploy and manage code changes, and with operations staff to ensure that systems are up and running smoothly. To be successful in this role, a DevOps engineer must have a deep understanding of both development and operations processes, as well as a strong technical background."
     },
     {
       "id": 2,
@@ -53,12 +54,13 @@ const data =[
         "location": "Lagos",
         "iconLoction": "IoLocationOutline",
         "salary": "#100,000",
-        "type": "on-site",      
+        "type": "remote",      
         "iconPeople": "FaPeopleGroup",
         "numberofApplicants": "20 applicants",
         "openDate": "Posted on 4th, March 2024",
         "closeDate": "Closed on 4th, March 2024",
-        "button": "Apply"
+        "button": "Apply",
+        "job_descriptions": "A DevOps engineer is responsible for the smooth operation of a company's IT infrastructure. They work with developers to deploy and manage code changes, and with operations staff to ensure that systems are up and running smoothly. To be successful in this role, a DevOps engineer must have a deep understanding of both development and operations processes, as well as a strong technical background."
     },
     {
       "id": 3,
@@ -73,7 +75,8 @@ const data =[
       "numberofApplicants": "20 applicants",
       "openDate": "Posted on 4th, March 2024",
       "closeDate": "Closed on 4th, March 2024",
-      "button": "Apply"
+      "button": "Apply",
+      "job_descriptions": "A DevOps engineer is responsible for the smooth operation of a company's IT infrastructure. They work with developers to deploy and manage code changes, and with operations staff to ensure that systems are up and running smoothly. To be successful in this role, a DevOps engineer must have a deep understanding of both development and operations processes, as well as a strong technical background."
     },
     {
       "id": 4,
@@ -83,12 +86,13 @@ const data =[
       "location": "Lagos",
       "iconLoction": "IoLocationOutline",
       "salary": "#100,000",
-      "type": "on-site",      
+      "type": "hybrid",      
       "iconPeople": "FaPeopleGroup",
       "numberofApplicants": "20 applicants",
       "openDate": "Posted on 4th, March 2024",
       "closeDate": "Closed on 4th, March 2024",
-      "button": "Apply"
+      "button": "Apply",
+      "job_descriptions": "A DevOps engineer is responsible for the smooth operation of a company's IT infrastructure. They work with developers to deploy and manage code changes, and with operations staff to ensure that systems are up and running smoothly. To be successful in this role, a DevOps engineer must have a deep understanding of both development and operations processes, as well as a strong technical background."
     },
     {
       "id": 5,
@@ -98,12 +102,13 @@ const data =[
       "location": "Lagos",
       "iconLoction": "IoLocationOutline",
       "salary": "#100,000",
-      "type": "on-site",      
+      "type": "onsite",      
       "iconPeople": "FaPeopleGroup",
       "numberofApplicants": "20 applicants",
       "openDate": "Posted on 4th, March 2024",
       "closeDate": "Closed on 4th, March 2024",
-      "button": "Apply"
+      "button": "Apply",
+      "job_descriptions": "A DevOps engineer is responsible for the smooth operation of a company's IT infrastructure. They work with developers to deploy and manage code changes, and with operations staff to ensure that systems are up and running smoothly. To be successful in this role, a DevOps engineer must have a deep understanding of both development and operations processes, as well as a strong technical background."
     },
     {
       "id": 6, 
@@ -113,12 +118,13 @@ const data =[
         "location": "Lagos",
         "iconLoction": "IoLocationOutline",
         "salary": "#100,000",
-        "type": "on-site",      
+        "type": "remote",      
         "iconPeople": "FaPeopleGroup",
         "numberofApplicants": "20 applicants",
         "openDate": "Posted on 4th, March 2024",
         "closeDate": "Closed on 4th, March 2024",
-        "button": "Apply"
+        "button": "Apply",
+        "job_descriptions": "A DevOps engineer is responsible for the smooth operation of a company's IT infrastructure. They work with developers to deploy and manage code changes, and with operations staff to ensure that systems are up and running smoothly. To be successful in this role, a DevOps engineer must have a deep understanding of both development and operations processes, as well as a strong technical background."
     },
     {
       "id": 7,
@@ -128,12 +134,13 @@ const data =[
       "location": "Lagos",
       "iconLoction": "IoLocationOutline",
       "salary": "#100,000",
-      "type": "on-site",      
+      "type": "hybrid",      
       "iconPeople": "FaPeopleGroup",
       "numberofApplicants": "20 applicants",
       "openDate": "Posted on 4th, March 2024",
       "closeDate": "Closed on 4th, March 2024",
-      "button": "Apply"
+      "button": "Apply",
+      "job_descriptions": "A DevOps engineer is responsible for the smooth operation of a company's IT infrastructure. They work with developers to deploy and manage code changes, and with operations staff to ensure that systems are up and running smoothly. To be successful in this role, a DevOps engineer must have a deep understanding of both development and operations processes, as well as a strong technical background."
     },
     {
       "id": 8,
@@ -143,12 +150,13 @@ const data =[
       "location": "Lagos",
       "iconLoction": "IoLocationOutline",
       "salary": "#100,000",
-      "type": "on-site",      
+      "type": "onsite",      
       "iconPeople": "FaPeopleGroup",
       "numberofApplicants": "20 applicants",
       "openDate": "Posted on 4th, March 2024",
       "closeDate": "Closed on 4th, March 2024",
-      "button": "Apply"
+      "button": "Apply",
+      "job_descriptions": "A DevOps engineer is responsible for the smooth operation of a company's IT infrastructure. They work with developers to deploy and manage code changes, and with operations staff to ensure that systems are up and running smoothly. To be successful in this role, a DevOps engineer must have a deep understanding of both development and operations processes, as well as a strong technical background."
     },
     {
       "id": 9,
@@ -158,13 +166,15 @@ const data =[
       "location": "Lagos",
       "iconLoction": "IoLocationOutline",
       "salary": "#100,000",
-      "type": "on-site",      
+      "type": "onsite",      
       "iconPeople": "FaPeopleGroup",
       "numberofApplicants": "20 applicants",
       "openDate": "Posted on 4th, March 2024",
       "closeDate": "Closed on 4th, March 2024",
-      "button": "Apply"
+      "button": "Apply",
+      "job_descriptions": "A DevOps engineer is responsible for the smooth operation of a company's IT infrastructure. They work with developers to deploy and manage code changes, and with operations staff to ensure that systems are up and running smoothly. To be successful in this role, a DevOps engineer must have a deep understanding of both development and operations processes, as well as a strong technical background."
     }
 ]
 
 export default data;
+
