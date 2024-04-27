@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "role": "Frontend Developer",
+        "location": "Remote",
+        "date": "Posted on 4th, March 2024",
+        "type": "Full Time",
+        "jobdescrption": "We are seeking a talented and experienced Frontend Developer to join our dynamic team. The ideal candidate will have a strong background in frontend development technologies and a passion for creating user-friendly interfaces. In this role, you will collaborate with cross-functional teams to design and implement cutting-edge web applications that enhance user experience and drive business growth."
+    },
+    {
+        "id": 2,
+        "role": "Backend Developer",
+        "location": "Remote",
+        "date": "Posted on 4th, March 2024",
+        "type": "Full Time",
+        "jobdescrption": "We are seeking a talented and experienced Backend Developer to join our dynamic team. The ideal candidate will have a strong background in backend development technologies and a passion for creating robust and scalable server-side applications. In this role, you will work closely with frontend developers to design and implement APIs, integrate with databases, and optimize application performance."
+    },
+    {
+        "id": 3,
+        "role": "Devops",
+        "location": "Onsite",
+        "date": "Posted on 4th, March 2024",
+        "type": "Full Time",
+        "jobdescrption": "We are seeking a skilled DevOps Engineer to join our team. The ideal candidate will have experience in automating, managing, and scaling cloud infrastructure. In this role, you will be responsible for implementing CI/CD pipelines, monitoring system performance, and ensuring the reliability and security of our applications."
+    },
+    {
+        "id": 5,
+        "role": "Frontend Developer",
+        "location": "Hybrid",
+        "date": "Posted on 4th, March 2024",
+        "type": "Full Time",
+        "jobdescrption": "We are seeking a creative and passionate Frontend Developer to join our team. The ideal candidate will have expertise in modern frontend frameworks such as React, Angular, or Vue.js. In this role, you will collaborate with designers to implement responsive and visually appealing user interfaces that meet the needs of our users."
+    },
+    {
+        "id": 6,
+        "role": "Frontend Developer",
+        "location": "Onsite",
+        "date": "Posted on 4th, March 2024",
+        "type": "Part-Time",
+        "jobdescrption": "We are looking for a talented Frontend Developer to join our team on a part-time basis. The ideal candidate will have strong proficiency in HTML, CSS, and JavaScript, as well as experience with frontend frameworks such as React or Angular. In this role, you will work closely with our design and development teams to implement new features and enhance existing web applications."
+    },
+    {
+        "id": 7,
+        "role": "Backend Developer",
+        "location": "Onsite",
+        "date": "Posted on 4th, March 2024",
+        "type": "Full Time",
+        "jobdescrption": "We are seeking an experienced Backend Developer to join our team. The ideal candidate will have expertise in server-side programming languages such as Node.js, Python, or Java, as well as experience with database management systems such as MySQL or MongoDB. In this role, you will design and implement server-side logic, integrate with external APIs, and optimize application performance."
+    },
+    {
+        "id": 8,
+        "role": "Product Manager",
+        "location": "Onsite",
+        "date": "Posted on 4th, March 2024",
+        "type": "Part-Time",
+        "jobdescrption": "We are looking for a Product Manager to join our team on a part-time basis. The ideal candidate will have experience in product management, with a focus on defining product strategy, prioritizing features, and collaborating with cross-functional teams to deliver successful products. In this role, you will be responsible for driving the development and execution of product initiatives to achieve business goals."
+    },
+    {
+        "id": 9,
+        "role": "Frontend Developer",
+        "location": "Remote",
+        "date": "Posted on 4th, March 2024",
+        "type": "Full Time",
+        "jobdescrption": "We are seeking a motivated and creative Frontend Developer to join our remote team. The ideal candidate will have a strong background in frontend technologies and a passion for creating elegant and intuitive user interfaces. In this role, you will collaborate with designers and backend developers to implement frontend features and optimize application performance."
+    },
+    {
+        "id": 10,
+        "role": "Frontend Developer",
+        "location": "Remote",
+        "date": "Posted on 4th, March 2024",
+        "type": "Full Time",
+        "jobdescrption": "We are seeking an experienced Frontend Developer to join our remote team. The ideal candidate will have expertise in frontend technologies such as HTML, CSS, JavaScript, and frontend frameworks like React or Angular. In this role, you will work closely with our design and development teams to create visually appealing and responsive web applications that meet the needs of our users."
+    }
+]
