@@ -8,8 +8,6 @@ import jwt from "jsonwebtoken"
 import { GenerateSignature, ValidatePassword } from "../../utility/PasswordUtility.js";
 import Jobs from "../models/JobPostModel.js";
 
-const fs = require('fs');
-const path = require('path');
 
 
 export const ApplicantSignUp = async (req, res) => {
