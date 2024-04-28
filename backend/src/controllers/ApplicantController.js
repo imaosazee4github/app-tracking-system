@@ -7,6 +7,8 @@ import multer from "multer";
 import jwt from "jsonwebtoken"
 import { GenerateSignature, ValidatePassword } from "../../utility/PasswordUtility.js";
 import Jobs from "../models/JobPostModel.js";
+import cloudinary from "../../utility/cloudinaryConfig.js";
+import fs from "fs";
 
 
 
@@ -183,10 +185,49 @@ const upload = multer({
 }).single("cv");
 
 
-export const UploadCv = async (req, res) => {
-  const user = req.user;
+// export const UploadCv = async (req, res) => {
+//   const user = req.user;
+
+//   try {
+//     if (!user) {
+//       return res.status(401).json({ error: 'User not authenticated' });
+//     }
+
+//     const applicant = await Applicant.findById(user._id);
+
+//     if (!applicant) {
+//       return res.status(404).json({ error: 'Applicant not found' });
+//     }
+
+//     // Handle file upload
+//     upload(req, res, async (err) => {
+//       if (err) {
+//         return res.status(400).json({ error: 'Error uploading file' });
+//       }
+
+//       if (!req.file) {
+//         return res.status(400).json({ error: 'No file uploaded' });
+//       }
+
+//       // If file uploaded successfully, add it to applicant's CV
+//       applicant.cv = req.file.filename;
+
+//       // Save the applicant with the updated CV
+//       const result = await applicant.save();
+
+//       return res.json(result);
+//     });
+//   } catch (error) {
+//     return res.status(500).json({ error: error.message });
+//   }
+// };
+
+
+export const uploadFile = async (req, res, next) => {
 
   try {
+    const user = req.user;
+
     if (!user) {
       return res.status(401).json({ error: 'User not authenticated' });
     }
@@ -197,26 +238,32 @@ export const UploadCv = async (req, res) => {
       return res.status(404).json({ error: 'Applicant not found' });
     }
 
-    // Handle file upload
-    upload(req, res, async (err) => {
-      if (err) {
-        return res.status(400).json({ error: 'Error uploading file' });
-      }
 
-      if (!req.file) {
-        return res.status(400).json({ error: 'No file uploaded' });
-      }
+    // Check if the file was provided
+    if (!req.file) {
+      return res.status(400).json({ message: 'No file uploaded' });
+    }
+
+    console.log('Uploading to Cloudinary...');
+    // Upload file to Cloudinary
+    const cloudinaryUploadResponse = await cloudinary.uploader.upload(req.file.path, {
+      resource_type: "auto"
+    });
+
+    console.log("Your file is uploaded on Cloudinary ", cloudinaryUploadResponse.url);
 
       // If file uploaded successfully, add it to applicant's CV
-      applicant.cv = req.file.filename;
+    applicant.cv = cloudinaryUploadResponse.url;
 
-      // Save the applicant with the updated CV
-      const result = await applicant.save();
+    const result = await applicant.save()
 
-      return res.json(result);
-    });
+    // Send response back to the client
+    res.status(200).json({ url: cloudinaryUploadResponse.url, result: result });
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    console.error(error);
+    fs.unlinkSync(req.file.path);
+    // Send error response back to the client
+    res.status(500).json({ message: 'An error occurred during file upload' });
   }
 };
 
