@@ -1,5 +1,5 @@
 import express from "express";
-import { ApplicantLogin, ApplicantSignUp, Apply, GetActiveJobs, UploadCv, uploadFile } from "../controllers/ApplicantController.js";
+import { ApplicantLogin, ApplicantSignUp, Apply, GetActiveJobs, uploadFile } from "../controllers/ApplicantController.js";
 import multer from "multer";
 import { Authenticate } from "../middleware/CommonAuth.js";
 
