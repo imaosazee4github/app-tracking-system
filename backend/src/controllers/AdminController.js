@@ -117,7 +117,6 @@ export const JobApplicants = async (req, res) => {
    lastname: applicant.lastname,
    email: applicant.email,
    yearsofExperience: applicant.yearsofExperience,
-   age: applicant.age,
    number: applicant.number,
    activeJobsStage: [applicant.activeJobsStage]
   }));
@@ -231,5 +230,5 @@ export const AdminLogin = async (req, res) => {
   }
  }
 
- return res.status(404).json({ message: "Login Error" });
+ return res.status(404).json({ message: "Invalid email or password" });
 }

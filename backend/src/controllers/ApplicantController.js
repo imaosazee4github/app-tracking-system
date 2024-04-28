@@ -21,7 +21,6 @@ export const ApplicantSignUp = async (req, res) => {
       lastname,
       email,
       password,
-      age,
       yearsofExperience,
       location,
       number,
@@ -42,7 +41,6 @@ export const ApplicantSignUp = async (req, res) => {
         lastname,
         email,
         password: passwordHash,
-        age,
         yearsofExperience,
         location,
         salt: salt,
@@ -89,7 +87,7 @@ export const ApplicantLogin = async (req, res) => {
     }
   }
 
-  return res.status(404).json({ message: "Login Error" });
+  return res.status(404).json({ message: "Invalid email or password" });
 }
 
 

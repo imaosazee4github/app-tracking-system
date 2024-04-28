@@ -45,7 +45,6 @@ const ApplicantSchema = new mongoose.Schema(
    }
   }],
   salt: { type: String, required: true },
-  age: Number,
   location: String,
   number: Number,
  },
