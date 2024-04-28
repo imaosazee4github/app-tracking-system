@@ -169,7 +169,15 @@ const fileStorage = multer.diskStorage({
 });
 
 // Multer middleware for handling file uploads
-const upload = multer({ storage: fileStorage }).single('cv');
+// const upload = multer({ storage: fileStorage }).single('cv');
+
+const upload = multer({
+  storage: fileStorage,
+  limits: {
+    fileSize: 1024 * 1024 * 10, // 5 MB limit
+  },
+}).single("cv");
+
 
 export const UploadCv = async (req, res) => {
   const user = req.user;
