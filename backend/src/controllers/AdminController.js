@@ -222,6 +222,8 @@ export const AdminLogin = async (req, res) => {
    });
    // send result to client
    return res.status(201).json({
+    firstname: admin.firstname,
+    lastname: admin.lastname,
     signature: signature,
     verified: admin.verified,
     email: admin.email

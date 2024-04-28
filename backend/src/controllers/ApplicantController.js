@@ -78,6 +78,8 @@ export const ApplicantLogin = async (req, res) => {
       });
       // send result to client
       return res.status(201).json({
+        firstname: application.firstname,
+        lastname: application.lastname,
         signature: signature,
         verified: applicant.verified,
         email: applicant.email
