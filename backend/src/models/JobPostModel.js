@@ -30,6 +30,24 @@ const JobSchema = new mongoose.Schema(
    type:'String',
    required: true
   },
+  nature:{
+    type:'String',
+    required: true
+  },
+    opening_date:{
+      type: "String",
+      required: true
+  },
+    closing_date: {
+      type: "String",
+      required: true
+    },
+    skills_required: [
+      {
+      type: String,
+      required: true
+      }
+    ],
   applicants:[
    {
     type: Schema.Types.ObjectId,

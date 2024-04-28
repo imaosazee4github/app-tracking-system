@@ -7,32 +7,74 @@ import bcrypt from "bcrypt"
 import multer from "multer";
 
 
+// export const CreateJob = async (req, res) => {
+//  const {
+//   company,
+//   title,
+//   location,
+//   minExperience,
+//   pay
+//  } = req.body
+
+//  // Create jobID
+//  const jobId = Math.floor(100000 + Math.random() * 900000);
+
+
+
+//  const CreateJob = await Jobs.create({
+//   company: company,
+//   title: title,
+//   location: location,
+//   minExperience: minExperience,
+//   pay: pay,
+//   jobId: jobId,
+//   applicants: []
+//  })
+
+//  return res.status(200).json(CreateJob)
+// }
+
 export const CreateJob = async (req, res) => {
  const {
   company,
   title,
   location,
   minExperience,
-  pay
- } = req.body
+  pay,
+  nature,
+  skills_required
+ } = req.body;
 
  // Create jobID
  const jobId = Math.floor(100000 + Math.random() * 900000);
 
+ // Calculate opening and closing dates
+ const currentDate = new Date();
+ const openingDate = currentDate.toISOString(); // Convert to ISO format
+ const closingDate = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000)).toISOString(); // 30 days later
+
+ try {
+  const CreateJob = await Jobs.create({
+   company: company,
+   title: title,
+   location: location,
+   minExperience: minExperience,
+   pay: pay,
+   jobId: jobId,
+   nature: nature,
+   opening_date: openingDate,
+   closing_date: closingDate,
+   skills_required: skills_required,
+   applicants: []
+  });
+
+  return res.status(200).json(CreateJob);
+ } catch (error) {
+  return res.status(500).json({ error: error.message });
+ }
+};
 
 
- const CreateJob = await Jobs.create({
-  company: company,
-  title: title,
-  location: location,
-  minExperience: minExperience,
-  pay: pay,
-  jobId: jobId,
-  applicants: []
- })
-
- return res.status(200).json(CreateJob)
-}
 
 export const GetAllJobs = async (req, res) => {
  const jobs = await Jobs.find()
