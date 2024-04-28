@@ -8,6 +8,7 @@ import CompaniesProfile from './pages/CompaniesProfile';
 import UploadJobs from './pages/UploadJobs';
 import JobDetails from './pages/JobDetails';
 import AuthPage from './pages/AuthPage';
+import FIleUpload from './components/FileUpload';
 
 function Layout(){
   const user = true;
@@ -23,6 +24,7 @@ function App() {
     <>
     <main> 
       <Navbar />
+      <FIleUpload />
         <Routes>
         <Route element={<Layout/>}> 
         <Route path='/'
