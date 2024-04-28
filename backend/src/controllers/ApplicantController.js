@@ -7,7 +7,6 @@ import multer from "multer";
 import jwt from "jsonwebtoken"
 import { GenerateSignature, ValidatePassword } from "../../utility/PasswordUtility.js";
 import Jobs from "../models/JobPostModel.js";
-import bodyParser from "body-parser";
 
 
 
@@ -170,8 +169,6 @@ const fileStorage = multer.diskStorage({
   },
 });
 
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 // Multer middleware for handling file uploads
 // const upload = multer({ storage: fileStorage }).single('cv');
