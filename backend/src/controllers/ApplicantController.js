@@ -347,3 +347,13 @@ export const GetSingleJob = async (req, res) =>{
 
   return res.json({ message: "Job data not available" })
 }
+
+export const AllJobs = async (req, res) => {
+  const jobs = await Jobs.find()
+
+  if (jobs !== null) {
+    return res.status(200).json(jobs)
+  }
+
+  return res.json({ message: "Jobs data not available" });
+}
