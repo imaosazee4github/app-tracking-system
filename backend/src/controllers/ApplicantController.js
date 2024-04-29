@@ -336,3 +336,18 @@ export const GetActiveJobs = async (req, res) => {
   }
 };
 
+export const GetSingleJob = async (req, res) =>{
+  try {
+    const jobId = req.params.jobId
+
+    const job = await Jobs.findById(jobId);
+
+    if (!job) {
+      return res.status(404).json({ error: "Job not found" });
+    }
+
+    return res.json(job);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+}

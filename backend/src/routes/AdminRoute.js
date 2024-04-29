@@ -7,7 +7,7 @@ const router = express.Router();
 router.post('/createAdmin', AdminSignUp )
 router.post('/login', AdminLogin)
 router.post("/postjob",Authenticate, CreateJob)
-router.get("/jobs",Authenticate, GetAllJobs)
+router.get("/jobs",GetAllJobs)
 router.get("/jobs/:jobId",Authenticate, GetOneJob)
 router.get("/:jobId/applicants",Authenticate, JobApplicants)
 router.patch("/jobs/:jobId/:appId/update",Authenticate, UpdateApplicationStatus)

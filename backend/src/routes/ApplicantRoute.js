@@ -1,5 +1,5 @@
 import express from "express";
-import { ApplicantLogin, ApplicantSignUp, Apply, GetActiveJobs, uploadFile } from "../controllers/ApplicantController.js";
+import { ApplicantLogin, ApplicantSignUp, Apply, GetActiveJobs, GetSingleJob, uploadFile } from "../controllers/ApplicantController.js";
 import multer from "multer";
 import { Authenticate } from "../middleware/CommonAuth.js";
 
@@ -28,6 +28,8 @@ router.post("/login", ApplicantLogin)
 
 router.patch("/cv-upload", Authenticate, uploadFile);
 router.patch("/apply/:jobId", Authenticate, Apply)
+router.get("/job/:jobId", GetSingleJob)
 router.get("/myactiveapplications", Authenticate, GetActiveJobs)
+
 
 export default router
