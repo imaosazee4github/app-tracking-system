@@ -92,70 +92,6 @@ export const ApplicantLogin = async (req, res) => {
 
 
 
-
-
-
-// CV UPLOAD
-// Multer disk storage configuration
-// const fileStorage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//     cb(null, "files");
-//   },
-//   filename: function (req, file, cb) {
-//     cb(
-//       null,
-//       new Date().toISOString().replace(/:/g, "-") + "_" + file.originalname
-//     );
-//   },
-// });
-
-// Multer middleware for handling file uploads
-// const upload = multer({ storage: fileStorage }).single("cv");
-
-// const uploadDirectory = 'files';
-
-// export const UploadCv = async (req, res) => {
-//   const user = req.user;
-
-
-//   try {
-
-//     if (user) {
-//       const applicant = await Applicant.findById(user._id)
-
-//       if (applicant !== null) {
-
-//         // Handle file upload
-//         upload(req, res, async (err) => {
-//           if (err) {
-//             return res.status(400).json({ error: "Error uploading file" });
-//           }
-
-//           if (!req.file) {
-//             return res.status(400).json({ error: "No file uploaded" });
-//           }
-
-//           // If file uploaded successfully, add it to applicant's CV
-//           applicant.cv = req.file.filename;
-
-//           // Save the applicant with the updated CV
-//           const result = await applicant.save();
-
-//           return res.json(result);
-//         });
-//       }
-
-//       // If Applicant is null or undefined, return an error
-//       if (!applicant) {
-//         return res.status(404).json({ error: "Applicant not found" });
-//       }
-//     }
-//   } catch (error) {
-//     return res.status(500).json({ error: error.message });
-//   }
-// }
-
-
 // APPLY FOR JOBS
 
 // Multer disk storage configuration
@@ -172,8 +108,7 @@ const fileStorage = multer.diskStorage({
 });
 
 
-// Multer middleware for handling file uploads
-// const upload = multer({ storage: fileStorage }).single('cv');
+
 
 const upload = multer({
   storage: fileStorage,
